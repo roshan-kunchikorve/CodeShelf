@@ -1,4 +1,4 @@
-it // The GitHub and Google logos. (The icon library we use for everything else has no brand logos.)
+// The GitHub and Google logos. (The icon library we use for everything else has no brand logos.)
 
 export function GitHubIcon({ size = 20 }: { size?: number }) {
   return (
