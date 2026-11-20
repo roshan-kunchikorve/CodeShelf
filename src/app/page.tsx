@@ -66,7 +66,7 @@ export default async function HomePage() {
           </div>
         </div>
 
-        <div className="relative mx-auto hidden h-[460px] w-full max-w-md md:block" aria-hidden="true">
+        <div className="relative mx-auto hidden h-115 w-full max-w-md md:block" aria-hidden="true">
           <MiniCard
             title="debounce.js"
             language="javascript"
