@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@import "highlight.js/styles/github-dark.css";
+
+/*
+  The look of CodeShelf: a pale blue desk, white index cards, thick navy outlines and hard shadows.
+  Change these few values and the whole app changes colour.
+*/
+@theme {
+  --color-desk: #dce7f3;
+  --color-paper: #ffffff;
+  --color-ink: #14213d;
+  --color-muted: #4a5878;
+  --color-lemon: #ffd23f;
+  --color-cobalt: #2f5bea;
+  --color-danger: #d7263d;
+
+  --font-sans: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --shadow-hard: 5px 5px 0 0 var(--color-ink);
+  --shadow-hard-sm: 3px 3px 0 0 var(--color-ink);
+}
+
+@layer base {
+  body {
+    @apply bg-desk font-sans text-ink antialiased;
+  }
+
+  /* A clear ring so keyboard users can see where they are. */
+  :focus-visible {
+    outline: 3px solid var(--color-cobalt);
+    outline-offset: 2px;
+  }
+}
+
+/* Small reusable pieces. Use them like <div className="card"> or <button className="btn btn-primary">. */
+@layer components {
+  .card {
+    @apply border-2 border-ink bg-paper shadow-hard;
+  }
+
+  .btn {
+    @apply inline-flex cursor-pointer items-center whitespace-nowrap justify-center gap-2 border-2 border-ink bg-paper px-4 py-2 font-semibold text-ink shadow-hard-sm transition-[transform,box-shadow] duration-100 hover:bg-desk active:translate-x-[3px] active:translate-y-[3px] active:shadow-none disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply bg-lemon hover:bg-[#ffc400];
+  }
+
+  .btn-sm {
+    @apply px-2.5 py-1 text-sm;
+  }
+
+  .input {
+    @apply w-full border-2 border-ink bg-paper px-3 py-2 text-ink placeholder:text-muted;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 border-2 border-ink bg-paper px-2 py-0.5 text-xs font-semibold hover:bg-lemon;
+  }
+}
+
+/* highlight.js brings its own dark background. Our code panels already have one, so we clear it. */
+pre code.hljs {
+  padding: 0;
+  background: transparent;
+  font-variant-ligatures: none; /* show => as =>, not as an arrow symbol */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
