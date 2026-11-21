@@ -40,7 +40,7 @@
   }
 
   .btn {
-    @apply inline-flex cursor-pointer items-center whitespace-nowrap justify-center gap-2 border-2 border-ink bg-paper px-4 py-2 font-semibold text-ink shadow-hard-sm transition-[transform,box-shadow] duration-100 hover:bg-desk active:translate-x-[3px] active:translate-y-[3px] active:shadow-none disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex cursor-pointer items-center whitespace-nowrap justify-center gap-2 border-2 border-ink bg-paper px-4 py-2 font-semibold text-ink shadow-hard-sm transition-[transform,box-shadow] duration-100 hover:bg-desk active:translate-x-0.75 active:translate-y-0.75 active:shadow-none disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .btn-primary {
