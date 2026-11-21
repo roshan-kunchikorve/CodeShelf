@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "@fontsource-variable/bricolage-grotesque";
 import "@fontsource-variable/jetbrains-mono";
-// @ts-expect-error CSS is loaded by Next.js and has no TypeScript module exports.
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
